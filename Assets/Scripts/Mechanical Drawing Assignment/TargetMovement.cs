@@ -4,7 +4,6 @@ public class TargetMovement : MonoBehaviour
 {
     public float startPos;
     public float endPos;
-
     public float t = 0f;
     public AnimationCurve curve;
 
