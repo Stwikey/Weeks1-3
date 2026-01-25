@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class WaveMovement : MonoBehaviour
 {
-    public Transform startPos;
-    public Transform endPos;
+    public float startPosx;
+    public float startPosy;
+    public float endPosx;
+    public float endPosy;
+
     public float t = 0f;
-    public AnimationCurve curve;
+    public AnimationCurve curvex;
+    public AnimationCurve curvey;
+
     bool forwards = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,9 +42,9 @@ public class WaveMovement : MonoBehaviour
             forwards = true;
         }
 
-        transform.position = Vector2.Lerp(startPos.position, endPos.position, curve.Evaluate(t));
-
-        Debug.Log(t);
-       
+        Vector2 wavePos = new Vector2(0f, 0f);
+        wavePos.x = Mathf.Lerp(startPosx, endPosx, curvex.Evaluate(t));
+        wavePos.y = Mathf.Lerp(startPosy, endPosy, curvey.Evaluate(t));
+        transform.position = wavePos;       
     }
 }
