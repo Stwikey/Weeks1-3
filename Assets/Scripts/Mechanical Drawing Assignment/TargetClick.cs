@@ -24,9 +24,9 @@ public class TargetClick : MonoBehaviour
             transform.position = new Vector2(stick.position.x + 0.1f, stick.position.y +3);
         }
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        if(shot == false && mousePos.x > target.position.x - 3 && mousePos.x < target.position.x + 3 && mousePos.y > target.position.y - 3 && mousePos.y < target.position.y + 3)
+        if(shot == false && mousePos.x > target.position.x - 1 && mousePos.x < target.position.x + 1 && mousePos.y > target.position.y - 1 && mousePos.y < target.position.y + 1)
         {
-            shot =true;
+            shot = true;
             transform.position = new Vector2(1000f, 1000f);
             t = 0f;
         }
