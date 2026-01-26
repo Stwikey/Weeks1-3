@@ -3,7 +3,7 @@
 public class FirstScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    float speed = 0.01f;
+    public float speed = 0.01f;
     void Start()
     {
         
